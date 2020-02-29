@@ -14,7 +14,7 @@ class WONDERJAM2020_API AAutomobile : public AWheeledVehicle
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere)
-	int vie = 100;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=VieVoiture)
+	int32 vie = 100;
 	
 };
