@@ -11,8 +11,27 @@ class AWonderJam2020GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+	/* Override To Read In Pawn From Custom Controller */
+	UClass* GetDefaultPawnClassForController_Implementation(AController* InController) override;
+
 public:
 	AWonderJam2020GameMode();
-	virtual void PostLogin(APlayerController * NewPlayer) override;
+
+//private:
+	/*APawn* ClavierPawn;
+	APawn* AndroidPawn;*/
 
 };
+
+/*class BasePawn
+	équipe
+	--
+	--
+
+class clavierPawn : public BasePawn
+	Position androidCameraAnchor
+
+class androidPawn : public BasePawn
+	Tick() {
+	updatePosition(GetMyTeammate.androidCameraAnchor)
+}*/
