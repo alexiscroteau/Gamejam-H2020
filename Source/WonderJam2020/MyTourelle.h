@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/ArrowComponent.h"
 #include "MyTourelle.generated.h"
 
 UCLASS()
@@ -25,13 +26,18 @@ public:
 
 	void RotateTourelle();
 
+	void ShootTourelle();
+
 	UPROPERTY()
 		USceneComponent* Root;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tourelle")
 		UStaticMeshComponent* Tourelle;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Tourelle")
+		class UArrowComponent* TankDirection;
+
+	UPROPERTY(EditAnywhere)
 		float PitchValue;
 
 	UPROPERTY(EditAnywhere)
@@ -39,4 +45,7 @@ public:
 
 	UPROPERTY()
 		float RollValue;
+
+	UPROPERTY(EditAnywhere)
+		bool canShoot = false;
 };
