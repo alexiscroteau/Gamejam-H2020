@@ -13,7 +13,6 @@ class AWonderJam2020GameMode : public AGameModeBase
 
 public:
 	AWonderJam2020GameMode();
+	virtual void PostLogin(APlayerController * NewPlayer) override;
+
 };
-
-
-

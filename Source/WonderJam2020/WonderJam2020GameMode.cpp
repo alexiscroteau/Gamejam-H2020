@@ -9,3 +9,8 @@ AWonderJam2020GameMode::AWonderJam2020GameMode()
 	DefaultPawnClass = AWonderJam2020Pawn::StaticClass();
 	HUDClass = AWonderJam2020Hud::StaticClass();
 }
+
+void AWonderJam2020GameMode::PostLogin(APlayerController * NewPlayer)
+{
+	
+}

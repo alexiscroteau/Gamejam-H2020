@@ -26,7 +26,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LoadInGameMenu();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
+	void LoadLobbyMenu();
+
+	UFUNCTION(BlueprintCallable)
 	void LoadEndingMenu(class AActor* AttachedActor);
 
 	UFUNCTION(Exec)
@@ -45,10 +48,11 @@ public:
 private:
 	TSubclassOf<class UUserWidget> MainMenuClass;
 	TSubclassOf<class UUserWidget> InGameMenuClass;
+	TSubclassOf<class UUserWidget> LobbyMenuClass;
 	TSubclassOf<class UUserWidget> EndingMenuClass;
 
 	class UMenuWidget* MainMenu;
 	class UMenuWidget* InGameMenu;
+	class ULobbyMenu*  LobbyMenu;
 	class UEndingMenu* EndingMenu;
-	
 };

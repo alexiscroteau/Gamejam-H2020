@@ -9,6 +9,7 @@
 
 #include "MenuSystem/MenuWidget.h"
 #include "MenuSystem/EndingMenu.h"
+#include "MenuSystem/LobbyMenu.h"
 
 UWonderJam2020GameInstance::UWonderJam2020GameInstance(const FObjectInitializer& ObjectInitializer)
 {
@@ -21,6 +22,11 @@ UWonderJam2020GameInstance::UWonderJam2020GameInstance(const FObjectInitializer&
 	if (!ensure(InGameMenuBPClass.Class != nullptr)) return;
 
 	InGameMenuClass = InGameMenuBPClass.Class;
+
+	ConstructorHelpers::FClassFinder<UUserWidget> LobbyMenuBPClass(TEXT("/Game/MenuSystem/Blueprints/BP_LobbyMenu"));
+	if (!ensure(LobbyMenuBPClass.Class != nullptr)) return;
+
+	LobbyMenuClass = LobbyMenuBPClass.Class;
 
 	ConstructorHelpers::FClassFinder<UUserWidget> EndingMenuBPClass(TEXT("/Game/MenuSystem/Blueprints/BP_EndingMenu"));
 	if (!ensure(EndingMenuBPClass.Class != nullptr)) return;
@@ -59,6 +65,18 @@ void UWonderJam2020GameInstance::LoadInGameMenu()
 	InGameMenu->Setup();
 
 	InGameMenu->SetMenuInterface(this);
+}
+
+void UWonderJam2020GameInstance::LoadLobbyMenu()
+{
+	if (!ensure(LobbyMenuClass != nullptr)) return;
+
+	LobbyMenu = CreateWidget<ULobbyMenu>(this, LobbyMenuClass);
+	if (!ensure(LobbyMenu != nullptr)) return;
+
+	LobbyMenu->Setup();
+
+	LobbyMenu->SetMenuInterface(this);
 }
 
 void UWonderJam2020GameInstance::LoadEndingMenu(AActor* PlayerActor)
