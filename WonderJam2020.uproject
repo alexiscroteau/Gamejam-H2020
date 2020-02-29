@@ -7,7 +7,11 @@
 		{
 			"Name": "WonderJam2020",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"PhysXVehicles"
+			]
 		}
 	],
 	"Plugins": [
