@@ -9,6 +9,7 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class UShoot_UI;
 
 UCLASS()
 class WONDERJAM2020_API APhone_Character : public ACharacter
@@ -16,8 +17,9 @@ class WONDERJAM2020_API APhone_Character : public ACharacter
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BluePrintReadWrite)
 	USpringArmComponent* OurCameraSpringArm;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite)
 	UCameraComponent* OurCamera;
 
 	
@@ -39,4 +41,13 @@ public:
 	void Rotate_Right(float value);
 	UFUNCTION()
 	void Rotate_Up(float value);
+	UFUNCTION()
+	void Hit_Shoot();
+
+	UShoot_UI* viseur = nullptr;
+	TSubclassOf<class UShoot_UI> MenuClass;
+
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void SpawnParticle(FVector location);
 };
