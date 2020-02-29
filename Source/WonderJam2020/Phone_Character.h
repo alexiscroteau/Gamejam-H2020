@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "Phone_Character.generated.h"
 
+
+class USpringArmComponent;
 class UCameraComponent;
 
 UCLASS()
@@ -14,8 +16,9 @@ class WONDERJAM2020_API APhone_Character : public ACharacter
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, Category = Cameraaa)
-		UCameraComponent* m_Camera;
+	UPROPERTY(EditAnywhere)
+	USpringArmComponent* OurCameraSpringArm;
+	UCameraComponent* OurCamera;
 
 	
 	// Sets default values for this character's properties
@@ -34,4 +37,6 @@ public:
 
 	UFUNCTION()
 	void Rotate_Right(float value);
+	UFUNCTION()
+	void Rotate_Up(float value);
 };
