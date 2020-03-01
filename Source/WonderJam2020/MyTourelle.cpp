@@ -2,7 +2,7 @@
 
 
 #include "MyTourelle.h"
-#include "Components/StaticMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 
 // Sets default values
 AMyTourelle::AMyTourelle()
@@ -17,7 +17,7 @@ AMyTourelle::AMyTourelle()
 	//Root = CreateDefaultSubobject<USceneComponent>(TEXT("Tourelle"));
 	//RootComponent = Root;
 
-	Tourelle = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Tourelle"));
+	Tourelle = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Tourelle"));
 	//Tourelle->AttachTo(Root);
 
 	TankDirection = CreateDefaultSubobject<UArrowComponent>(TEXT("Tourelle Direction"));
@@ -53,8 +53,8 @@ void AMyTourelle::RotateTourelle() {
 void AMyTourelle::ShootTourelle() {
 
 	FHitResult OutHit;
-	FVector Start = Tourelle->GetComponentLocation();
-	FVector ForwardVector = Tourelle->GetForwardVector();
+	FVector Start = TankDirection->GetComponentLocation();
+	FVector ForwardVector = TankDirection->GetForwardVector();
 
 	FVector End = ((ForwardVector * 1000.f) + Start);
 	FCollisionQueryParams CollisionParams;

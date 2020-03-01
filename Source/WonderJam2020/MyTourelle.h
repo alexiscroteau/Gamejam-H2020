@@ -31,8 +31,8 @@ public:
 	UPROPERTY()
 		USceneComponent* Root;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tourelle")
-		UStaticMeshComponent* Tourelle;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Tourelle")
+		USkeletalMeshComponent* Tourelle;
 
 	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = "Tourelle")
 		class UArrowComponent* TankDirection;
