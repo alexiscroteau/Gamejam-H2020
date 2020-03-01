@@ -54,7 +54,6 @@ void AWonderJam2020PlayerController::ServerSetPawn_Implementation(TSubclassOf<AP
 	UWorld* World = GetWorld();
 	if (!ensure(World != nullptr)) return;
 
-	
 	World->GetAuthGameMode()->RestartPlayer(this);
 }
 

@@ -42,8 +42,11 @@ APhone_Character::APhone_Character()
 void APhone_Character::BeginPlay()
 {
 	Super::BeginPlay();
-	viseur = CreateWidget<UShoot_UI>(GetWorld(), MenuClass);
-	viseur->SetUp();
+	if (!HasAuthority())
+	{
+		viseur = CreateWidget<UShoot_UI>(GetWorld(), MenuClass);
+		viseur->SetUp();
+	}
 }
 
 // Called every frame
