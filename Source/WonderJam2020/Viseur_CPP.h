@@ -18,6 +18,8 @@ public:
 		USpringArmComponent* OurCameraSpringArm;
 	UPROPERTY(EditAnywhere, BluePrintReadWrite)
 		UCameraComponent* OurCamera;
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite)
+		USkeletalMeshComponent* tourelle;
 
 	// Sets default values for this character's properties
 	AViseur_CPP();

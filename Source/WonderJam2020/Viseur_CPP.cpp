@@ -16,7 +16,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h"
-#include "Particles/ParticleSystem.h"
+#include "Components/SkeletalMeshComponent.h"
 
 // Sets default values
 AViseur_CPP::AViseur_CPP()
@@ -30,6 +30,9 @@ AViseur_CPP::AViseur_CPP()
 
 	OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GameCamera"));
 	OurCamera->SetupAttachment(OurCameraSpringArm, USpringArmComponent::SocketName);
+
+	tourelle = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SKeletalMesh"));
+	//tourelle->SetupAttachment(RootComponent);
 	//AutoPossessPlayer = EAutoReceiveInput::Player0;
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -73,7 +76,8 @@ void AViseur_CPP::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 void AViseur_CPP::Rotate_Right(float value) {
 	OurCamera->RelativeRotation += FRotator(0.0f, value * 2, 0.0f);
-	//SetActorRotation(FRotator(value*200, 0.0f, 0.0f));
+	tourelle->RelativeRotation += FRotator(0.0f, value * 2, 0.0f);
+	//this->SetActorRelativeRotation(this->GetActorRotation()+ FRotator(0.0f, value * 2, 0.0f));
 }
 
 void AViseur_CPP::Rotate_Up(float value) {
@@ -92,6 +96,8 @@ void AViseur_CPP::Rotate_Up(float value) {
 	}
 	if (can) {
 		OurCamera->RelativeRotation += FRotator(value, 0.0f, 0.0f);
+		tourelle->RelativeRotation += FRotator(value, 0.0f, 0.0f);
+		//this->SetActorRelativeRotation(this->GetActorRotation() + FRotator(value, 0.0f, 0.0f));
 	}
 
 	//SetActorRotation(FRotator(value*200, 0.0f, 0.0f));
