@@ -16,5 +16,8 @@ class WONDERJAM2020_API AAutomobile : public AWheeledVehicle
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=VieVoiture)
 	int32 vie = 100;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = ScoreVoiture)
+	int32 score = 0;
 	
 };
