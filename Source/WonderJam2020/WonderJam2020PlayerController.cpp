@@ -10,7 +10,7 @@
 AWonderJam2020PlayerController::AWonderJam2020PlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	/* Initialize The Values */
-	ConstructorHelpers::FClassFinder<APhone_Character> PawnAndroidClass(TEXT("/Game/BluePrint/MyPhone_Character_BP"));
+	ConstructorHelpers::FClassFinder<AViseur_CPP> PawnAndroidClass(TEXT("/Game/BluePrint/MyViseur_CPP"));
 	PawnAndroid = PawnAndroidClass.Class;
 	ConstructorHelpers::FClassFinder<AAutomobile> PawnWindowsClass(TEXT("/Game/DeplacementVehicule/Vehicule/Voiture"));
 	PawnWindows = PawnWindowsClass.Class;
@@ -30,20 +30,22 @@ void AWonderJam2020PlayerController::BeginPlay()
 // Pawn Class
 void AWonderJam2020PlayerController::DeterminePawnClass_Implementation()
 {
-	if (IsLocalController()) //Only Do This Locally (NOT Client-Only, since Server wants this too!)
-	{
-		//FString platformName = UGameplayStatics::GetPlatformName();
-//		UE_LOG(LogTemp, Warning, TEXT("Platform is %s"), platformName);
-		/*if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
-		{*/
+	//if (IsLocalController()) //Only Do This Locally (NOT Client-Only, since Server wants this too!)
+	//{
+		FString platformName = UGameplayStatics::GetPlatformName();
+//////		UE_LOG(LogTemp, Warning, TEXT("Platform is %s"), platformName);
+		if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
+		{
+
 			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
 			ServerSetPawn(PawnAndroid);
 			return;
 		//}
 
-		/*ServerSetPawn(PawnWindows);
-		return;*/
-	}
+		ServerSetPawn(PawnWindows);
+		return;
+	//}
+
 }
 
 
@@ -67,5 +69,6 @@ bool AWonderJam2020PlayerController::ServerSetPawn_Validate(TSubclassOf<APawn> I
 // Replication
 void AWonderJam2020PlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-	DOREPLIFETIME(AWonderJam2020PlayerController, MyPawnClass);
+		DOREPLIFETIME(AWonderJam2020PlayerController, MyPawnClass);
+
 }

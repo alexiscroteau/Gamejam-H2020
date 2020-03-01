@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "Automobile.h"
-#include "Phone_Character.h"
+#include "Viseur_CPP.h"
 #include "WonderJam2020PlayerController.generated.h"
 
 /**
@@ -40,7 +40,7 @@ protected:
 
 	/* First Pawn Type To Use */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "My Controller")
-	TSubclassOf<APhone_Character> PawnAndroid;
+	TSubclassOf<AViseur_CPP> PawnAndroid;
 
 	/* Second Pawn Type To Use */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "My Controller")

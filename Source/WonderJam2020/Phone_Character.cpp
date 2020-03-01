@@ -24,10 +24,19 @@ APhone_Character::APhone_Character()
 	OurCameraSpringArm->bEnableCameraLag = true;
 	OurCameraSpringArm->CameraLagSpeed = 3.0f;
 
-	/*OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GameCamera"));
-	OurCamera->SetupAttachment(OurCameraSpringArm, USpringArmComponent::SocketName);*/
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
- 	
+
+	OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GameCamera"));
+	OurCamera->SetupAttachment(OurCameraSpringArm, USpringArmComponent::SocketName);
+	//AutoPossessPlayer = EAutoReceiveInput::Player0;
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+	ConstructorHelpers::FClassFinder<UUserWidget> MenuClassFinder(TEXT("/Game/BluePrint/UI/Viseur_UI"));
+	//MenuClass = MenuClassFinder.Class;
+
+	
+
+	//ParticleSystem = Cast<UParticleSystem>(StaticConstructObject(Particle));
+
 }
 
 // Called when the game starts or when spawned

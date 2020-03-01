@@ -3,34 +3,32 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
-#include "Phone_Character.generated.h"
-
+#include "Automobile.h"
+#include "Viseur_CPP.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
-//class UShoot_UI;
-
+class UShoot_UI;
 UCLASS()
-class WONDERJAM2020_API APhone_Character : public APawn
+class WONDERJAM2020_API AViseur_CPP : public AAutomobile
 {
 	GENERATED_BODY()
-
 public:
-	UPROPERTY(EditAnywhere,BluePrintReadWrite)
-	USpringArmComponent* OurCameraSpringArm;
 	UPROPERTY(EditAnywhere, BluePrintReadWrite)
-	UCameraComponent* OurCamera;
+		USpringArmComponent* OurCameraSpringArm;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite)
+		UCameraComponent* OurCamera;
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite)
+		USkeletalMeshComponent* tourelle;
 
-	
 	// Sets default values for this character's properties
-	APhone_Character();
+	AViseur_CPP();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -38,16 +36,24 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
-	void Rotate_Right(float value);
+		void Rotate_Right(float value);
 	UFUNCTION()
-	void Rotate_Up(float value);
+		void Rotate_Up(float value);
 	UFUNCTION()
-	void Hit_Shoot();
+		void Hit_Shoot();
 
-	/*UShoot_UI* viseur = nullptr;
-	TSubclassOf<class UShoot_UI> MenuClass;*/
+	UShoot_UI* viseur = nullptr;
+	TSubclassOf<class UShoot_UI> MenuClass;
 
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnParticle(FVector location, bool touch = false);
+
 };
+
+
+
+
+
+
+
