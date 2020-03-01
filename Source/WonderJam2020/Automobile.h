@@ -1,23 +1,28 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "WheeledVehicle.h"
 #include "Automobile.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class WONDERJAM2020_API AAutomobile : public AWheeledVehicle
 {
 	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=VieVoiture)
-	int32 vie = 100;
+	int vie = 100;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = pOINTVoiture)
+	int point = 0;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = ScoreVoiture)
-	int32 score = 0;
-	
+	UFUNCTION(Server, Reliable, WithValidation)
+		 void Touche(AAutomobile* aa);
+
+	UFUNCTION(Server, Reliable, WithValidation)
+		void AjouterPoint();
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void SpawnParticle(FVector location, bool touch = false);
+
+
 };
