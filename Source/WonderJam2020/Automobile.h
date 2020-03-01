@@ -20,7 +20,7 @@ public:
 	int point = 0;
 	
 	UFUNCTION(Server, Reliable, WithValidation)
-		virtual void Touche(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+		 void Touche(AAutomobile* aa);
 
 	UFUNCTION(Server, Reliable, WithValidation)
 		void AjouterPoint();

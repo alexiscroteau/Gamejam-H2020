@@ -3,20 +3,20 @@
 
 #include "Automobile.h"
 
-void AAutomobile::Touche_Implementation(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+void AAutomobile::Touche_Implementation(AAutomobile* aa) {
 	if (HasAuthority()) {
 
 			vie -= 1;
 			if (vie < 0) {
-				AAutomobile* voiture = (AAutomobile*)OtherActor;
-				if (voiture->IsA(AAutomobile::StaticClass())) {
-					voiture->AjouterPoint();
-			}
+				//AAutomobile* voiture = (AAutomobile*)OtherActor;
+				//if (voiture->IsA(AAutomobile::StaticClass())) {
+					aa->AjouterPoint();
+			//}
 		}
 	}
 }
 
-bool AAutomobile::Touche_Validate(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult) {
+bool AAutomobile::Touche_Validate(AAutomobile* aa) {
 	return true;
 }
 
