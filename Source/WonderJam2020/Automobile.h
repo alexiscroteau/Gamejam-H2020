@@ -21,6 +21,8 @@ public:
 	UFUNCTION(Server, Reliable, WithValidation)
 		void AjouterPoint();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void SpawnParticle(FVector location, bool touch = false);
 
 
 };

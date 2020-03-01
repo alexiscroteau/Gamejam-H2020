@@ -4,6 +4,7 @@ void AAutomobile::Touche_Implementation(AAutomobile* aa) {
 	if (HasAuthority()) {
 
 		vie -= 1;
+		SpawnParticle(GetActorLocation());
 		if (vie < 0) {
 			//AAutomobile* voiture = (AAutomobile)OtherActor;
 			//if (voiture->IsA(AAutomobile::StaticClass())) {
