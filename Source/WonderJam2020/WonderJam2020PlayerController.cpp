@@ -1,15 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "WonderJam2020PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/GameModeBase.h"
+#include "UObject/ConstructorHelpers.h"
 #include "Net/UnrealNetwork.h"
-#include "WonderJam2020PlayerController.h"
 
 AWonderJam2020PlayerController::AWonderJam2020PlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	/* Initialize The Values */
-	PawnAndroid = AWonderJam2020AndroidPawn::StaticClass();
+	ConstructorHelpers::FClassFinder<APhone_Character> PawnAndroidClass(TEXT("/Game/BluePrint/MyPhone_Character_BP"));
+	PawnAndroid = PawnAndroidClass.Class;
 	PawnWindows = AWonderJam2020Pawn::StaticClass();
 
 	/* Make sure the PawnClass is Replicated */
@@ -32,7 +34,7 @@ void AWonderJam2020PlayerController::DeterminePawnClass_Implementation()
 //		UE_LOG(LogTemp, Warning, TEXT("Platform is %s"), platformName);
 		if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
 		{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
 			ServerSetPawn(PawnAndroid);
 			return;
 		}

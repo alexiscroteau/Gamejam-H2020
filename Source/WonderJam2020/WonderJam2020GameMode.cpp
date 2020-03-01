@@ -25,10 +25,3 @@ UClass* AWonderJam2020GameMode::GetDefaultPawnClassForController_Implementation(
 	/* If we don't get the right Controller, use the Default Pawn */
 	return DefaultPawnClass;
 }
-
-void AWonderJam2020GameMode::PostLogin(APlayerController* NewPlayer)
-{
-	Super::PostLogin(NewPlayer);
-
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("SOEONE IS CONNECTING")));
-}
