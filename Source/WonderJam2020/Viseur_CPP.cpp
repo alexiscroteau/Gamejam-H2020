@@ -116,6 +116,10 @@ void AViseur_CPP::Hit_Shoot() {
 		if (OutHit.bBlockingHit)
 		{
 			SpawnParticle(OutHit.Location, true);
+			AAutomobile* aa = (AAutomobile*)OutHit.GetActor();
+			if (aa->IsA(AAutomobile::StaticClass())) {
+				aa->Touche(this);
+			}
 		}
 	}
 }
