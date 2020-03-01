@@ -43,7 +43,7 @@ void APhone_Character::BeginPlay()
 {
 	Super::BeginPlay();
 	viseur = CreateWidget<UShoot_UI>(GetWorld(), MenuClass);
-	viseur->SetUp(this);
+	viseur->SetUp();
 }
 
 // Called every frame
