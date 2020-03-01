@@ -13,12 +13,11 @@ class WONDERJAM2020_API UShoot_UI : public UUserWidget
 {
 	GENERATED_BODY()
 public :
-	void SetUp(APhone_Character* character);
+	void SetUp();
 	/*UPROPERTY(meta = (BindWidget))
 		UButton* Shoot_Button;*/
-	void Shoot();
 protected : 
 	void NativeConstruct() override;
-	APhone_Character* m_character;
+
 	
 };

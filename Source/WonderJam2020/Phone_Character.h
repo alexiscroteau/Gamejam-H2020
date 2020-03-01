@@ -49,5 +49,5 @@ public:
 
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void SpawnParticle(FVector location);
+		void SpawnParticle(FVector location, bool touch = false);
 };
