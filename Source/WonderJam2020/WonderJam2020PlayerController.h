@@ -40,9 +40,9 @@ protected:
 
 	/* First Pawn Type To Use */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "My Controller")
-	TSubclassOf<AWonderJam2020Pawn> PawnAndroid;
+	TSubclassOf<AWonderJam2020AndroidPawn> PawnAndroid;
 
 	/* Second Pawn Type To Use */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "My Controller")
-	TSubclassOf<AWonderJam2020AndroidPawn> PawnWindows;
+	TSubclassOf<AWonderJam2020Pawn> PawnWindows;
 };

@@ -14,6 +14,8 @@ class AWonderJam2020GameMode : public AGameModeBase
 	/* Override To Read In Pawn From Custom Controller */
 	UClass* GetDefaultPawnClassForController_Implementation(AController* InController) override;
 
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+
 public:
 	AWonderJam2020GameMode();
 

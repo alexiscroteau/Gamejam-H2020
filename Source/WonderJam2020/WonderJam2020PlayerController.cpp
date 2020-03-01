@@ -3,6 +3,7 @@
 
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/GameModeBase.h"
+#include "Net/UnrealNetwork.h"
 #include "WonderJam2020PlayerController.h"
 
 AWonderJam2020PlayerController::AWonderJam2020PlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
@@ -29,9 +30,9 @@ void AWonderJam2020PlayerController::DeterminePawnClass_Implementation()
 	{
 		FString platformName = UGameplayStatics::GetPlatformName();
 //		UE_LOG(LogTemp, Warning, TEXT("Platform is %s"), platformName);
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
 		if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
 		{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
 			ServerSetPawn(PawnAndroid);
 			return;
 		}
@@ -62,5 +63,5 @@ bool AWonderJam2020PlayerController::ServerSetPawn_Validate(TSubclassOf<APawn> I
 // Replication
 void AWonderJam2020PlayerController::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
-	//DOREPLIFETIME(AWonderJam2020PlayerController, MyPawnClass);
+	DOREPLIFETIME(AWonderJam2020PlayerController, MyPawnClass);
 }
