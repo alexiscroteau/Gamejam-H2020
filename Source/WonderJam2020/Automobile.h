@@ -19,7 +19,7 @@ public:
 		 void Touche(AAutomobile* aa);
 
 	UFUNCTION(Server, Reliable, WithValidation)
-		void AjouterPoint();
+		void AjouterPoint(int i);
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnParticle(FVector location, bool touch = false);

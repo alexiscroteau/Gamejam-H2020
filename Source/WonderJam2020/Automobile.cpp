@@ -8,7 +8,10 @@ void AAutomobile::Touche_Implementation(AAutomobile* aa) {
 		if (vie < 0) {
 			//AAutomobile* voiture = (AAutomobile)OtherActor;
 			//if (voiture->IsA(AAutomobile::StaticClass())) {
-			aa->AjouterPoint();
+			aa->AjouterPoint(5);
+			vie = 100;
+			AjouterPoint(-3);
+
 			//}
 		}
 	}
@@ -18,12 +21,12 @@ bool AAutomobile::Touche_Validate(AAutomobile* aa) {
 	return true;
 }
 
-void AAutomobile::AjouterPoint_Implementation() {
+void AAutomobile::AjouterPoint_Implementation(int i) {
 	if (HasAuthority()) {
-		point += 1;
+		point += i;
 	}
 }
 
-bool AAutomobile::AjouterPoint_Validate() {
+bool AAutomobile::AjouterPoint_Validate(int i) {
 	return true;
 }
