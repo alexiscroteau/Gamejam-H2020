@@ -92,7 +92,8 @@ void APhone_Character::Rotate_Up(float value) {
 }
 
 void APhone_Character::Hit_Shoot() {
-	
+		
+		SpawnParticle(FVector(0,0,0));
 		FHitResult OutHit;
 		FVector Start = OurCamera->GetComponentLocation();
 		FVector ForwardVector = OurCamera->GetForwardVector();
@@ -102,9 +103,7 @@ void APhone_Character::Hit_Shoot() {
 		{
 			if (OutHit.bBlockingHit)
 			{
-				SpawnParticle(OutHit.Location);
-				//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Red, FString::Printf(TEXT("Shoot : %s"), *OutHit.GetActor()->GetName()));
-				
+				SpawnParticle(OutHit.Location,true);
 			}
 		}
 }
