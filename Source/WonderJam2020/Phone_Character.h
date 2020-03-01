@@ -9,7 +9,7 @@
 
 class USpringArmComponent;
 class UCameraComponent;
-class UShoot_UI;
+//class UShoot_UI;
 
 UCLASS()
 class WONDERJAM2020_API APhone_Character : public ACharacter
@@ -44,8 +44,8 @@ public:
 	UFUNCTION()
 	void Hit_Shoot();
 
-	UShoot_UI* viseur = nullptr;
-	TSubclassOf<class UShoot_UI> MenuClass;
+	/*UShoot_UI* viseur = nullptr;
+	TSubclassOf<class UShoot_UI> MenuClass;*/
 
 
 	UFUNCTION(BlueprintImplementableEvent)

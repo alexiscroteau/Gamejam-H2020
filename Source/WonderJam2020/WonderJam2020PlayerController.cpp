@@ -32,17 +32,17 @@ void AWonderJam2020PlayerController::DeterminePawnClass_Implementation()
 {
 	if (IsLocalController()) //Only Do This Locally (NOT Client-Only, since Server wants this too!)
 	{
-		FString platformName = UGameplayStatics::GetPlatformName();
+		//FString platformName = UGameplayStatics::GetPlatformName();
 //		UE_LOG(LogTemp, Warning, TEXT("Platform is %s"), platformName);
-		if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
+		/*if (platformName.Equals(TEXT("Android"), ESearchCase::CaseSensitive))
+		{*/
+			//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *platformName));
 			ServerSetPawn(PawnAndroid);
 			return;
-		}
+		//}
 
-		ServerSetPawn(PawnWindows);
-		return;
+		/*ServerSetPawn(PawnWindows);
+		return;*/
 	}
 }
 

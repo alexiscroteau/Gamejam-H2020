@@ -17,36 +17,23 @@
 // Sets default values
 APhone_Character::APhone_Character()
 {
-	//RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+	PrimaryActorTick.bCanEverTick = true;
 	OurCameraSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraSpringArm"));
 	OurCameraSpringArm->SetupAttachment(RootComponent);
-	//OurCameraSpringArm->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, 00.0f), FRotator(0.0f, 0.0f, 0.0f));
 	OurCameraSpringArm->TargetArmLength = 200.f;
 	OurCameraSpringArm->bEnableCameraLag = true;
 	OurCameraSpringArm->CameraLagSpeed = 3.0f;
 
-	OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GameCamera"));
-	OurCamera->SetupAttachment(OurCameraSpringArm, USpringArmComponent::SocketName);
+	/*OurCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("GameCamera"));
+	OurCamera->SetupAttachment(OurCameraSpringArm, USpringArmComponent::SocketName);*/
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-	ConstructorHelpers::FClassFinder<UUserWidget> MenuClassFinder(TEXT("/Game/BluePrint/UI/Viseur_UI"));
-	MenuClass = MenuClassFinder.Class;
-
-	
-
-	//ParticleSystem = Cast<UParticleSystem>(StaticConstructObject(Particle));
+ 	
 }
 
 // Called when the game starts or when spawned
 void APhone_Character::BeginPlay()
 {
 	Super::BeginPlay();
-	if (!HasAuthority())
-	{
-		viseur = CreateWidget<UShoot_UI>(GetWorld(), MenuClass);
-		viseur->SetUp();
-	}
 }
 
 // Called every frame
@@ -61,21 +48,21 @@ void APhone_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	check(PlayerInputComponent);
-	PlayerInputComponent->BindAxis("MoveRight", this, &APhone_Character::Rotate_Right);
+	/*PlayerInputComponent->BindAxis("MoveRight", this, &APhone_Character::Rotate_Right);
 	PlayerInputComponent->BindAxis("MoveForward", this, &APhone_Character::Rotate_Up);
 	PlayerInputComponent->BindAction("Shoot", IE_Repeat, this, &APhone_Character::Hit_Shoot);
-	
+	*/
 
 }
 
 void APhone_Character::Rotate_Right(float value) {
-	OurCamera->RelativeRotation += FRotator(0.0f, value * 2, 0.0f);
-	//SetActorRotation(FRotator(value*200, 0.0f, 0.0f));
+	//OurCamera->RelativeRotation += FRotator(0.0f, value * 2, 0.0f);
+	
 }
 
 void APhone_Character::Rotate_Up(float value) {
 	//GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Yellow, OurCamera->GetRelativeRotation().Vector().ToString());
-	bool can = false;
+	/*bool can = false;
 	if (value < 0) {
 		if (OurCamera->GetRelativeRotation().Vector().Z > -0.4) {
 			can = true;
@@ -90,13 +77,13 @@ void APhone_Character::Rotate_Up(float value) {
 	if (can) {
 		OurCamera->RelativeRotation += FRotator(value, 0.0f, 0.0f);
 	}
-	
+	*/
 	//SetActorRotation(FRotator(value*200, 0.0f, 0.0f));
 }
 
 void APhone_Character::Hit_Shoot() {
 		
-		SpawnParticle(FVector(0,0,0));
+		/*SpawnParticle(FVector(0,0,0));
 		FHitResult OutHit;
 		FVector Start = OurCamera->GetComponentLocation();
 		FVector ForwardVector = OurCamera->GetForwardVector();
@@ -108,5 +95,5 @@ void APhone_Character::Hit_Shoot() {
 			{
 				SpawnParticle(OutHit.Location,true);
 			}
-		}
+		}*/
 }
