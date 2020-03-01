@@ -17,10 +17,15 @@
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h"
 #include "Particles/ParticleSystem.h"
+#include "WonderJam2020GameState.h"
 
 // Sets default values
 AViseur_CPP::AViseur_CPP()
 {
+	//AWonderJam2020GameState* GState = GetWorld()->GetGameState<AWonderJam2020GameState>();
+	//GState->AssignTeam(this);
+	//Team = GState->GetTeam(this);
+
 	//RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 	OurCameraSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraSpringArm"));
 	OurCameraSpringArm->SetupAttachment(RootComponent);
@@ -45,10 +50,11 @@ AViseur_CPP::AViseur_CPP()
 void AViseur_CPP::BeginPlay()
 {
 	Super::BeginPlay();
-	if (!HasAuthority())
+
+	if (HasAuthority())
 	{
-		viseur = CreateWidget<UShoot_UI>(GetWorld(), MenuClass);
-		viseur->SetUp();
+		AWonderJam2020GameState* GState = GetWorld()->GetGameState<AWonderJam2020GameState>();
+		this->SetActorLocation(GState->GetTeammate(this)->GetActorLocation());
 	}
 }
 
@@ -56,7 +62,11 @@ void AViseur_CPP::BeginPlay()
 void AViseur_CPP::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (HasAuthority())
+	{
+		AWonderJam2020GameState* GState = GetWorld()->GetGameState<AWonderJam2020GameState>();
+		this->SetActorLocation(GState->GetTeammate(this)->GetActorLocation());
+	}
 }
 
 // Called to bind functionality to input

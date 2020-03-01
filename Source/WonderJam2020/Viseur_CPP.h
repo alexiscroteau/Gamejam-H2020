@@ -43,7 +43,6 @@ public:
 	UShoot_UI* viseur = nullptr;
 	TSubclassOf<class UShoot_UI> MenuClass;
 
-
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnParticle(FVector location, bool touch = false);
 

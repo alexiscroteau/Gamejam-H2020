@@ -13,8 +13,13 @@ UCLASS()
 class WONDERJAM2020_API AAutomobile : public AWheeledVehicle
 {
 	GENERATED_BODY()
+
+protected:
+	AAutomobile();
+	virtual void BeginPlay() override;
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=VieVoiture)
 	int32 vie = 100;
-	
+
+	uint32 Team;
 };
