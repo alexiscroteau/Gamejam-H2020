@@ -12,7 +12,9 @@ AWonderJam2020PlayerController::AWonderJam2020PlayerController(const FObjectInit
 	/* Initialize The Values */
 	ConstructorHelpers::FClassFinder<APhone_Character> PawnAndroidClass(TEXT("/Game/BluePrint/MyPhone_Character_BP"));
 	PawnAndroid = PawnAndroidClass.Class;
-	PawnWindows = AWonderJam2020Pawn::StaticClass();
+	ConstructorHelpers::FClassFinder<AAutomobile> PawnWindowsClass(TEXT("/Game/DeplacementVehicule/Vehicule/Voiture"));
+	PawnWindows = PawnWindowsClass.Class;
+//	PawnWindows = AWonderJam2020Pawn::StaticClass();
 
 	/* Make sure the PawnClass is Replicated */
 	bReplicates = true;
