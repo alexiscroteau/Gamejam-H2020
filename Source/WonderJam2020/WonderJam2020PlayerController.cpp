@@ -9,8 +9,8 @@
 AWonderJam2020PlayerController::AWonderJam2020PlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
 	/* Initialize The Values */
-	PawnAndroid = NULL;
-	PawnWindows = NULL;
+	PawnAndroid = AWonderJam2020AndroidPawn::StaticClass();
+	PawnWindows = AWonderJam2020Pawn::StaticClass();
 
 	/* Make sure the PawnClass is Replicated */
 	bReplicates = true;
@@ -47,6 +47,7 @@ void AWonderJam2020PlayerController::ServerSetPawn_Implementation(TSubclassOf<AP
 {
 	MyPawnClass = InPawnClass;
 
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Platform is : %s"), *InPawnClass.Get()->GetFullName()));
 	/* Just in case we didn't get the PawnClass on the Server in time... */
 	UWorld* World = GetWorld();
 	if (!ensure(World != nullptr)) return;
