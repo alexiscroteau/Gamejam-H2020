@@ -1,0 +1,162 @@
+UNDER Attribution 4.0 International (CC BY 4.0) LICENSE:
+----------MUSIC--------------
+MetalSample1 -> 
+	Song: Rocking Forward
+	URL: https://freemusicarchive.org/music/XTaKeRuX/The_way_iam/Rocking_Forward_
+	Artist: XTaKeRuX
+	Changes: none
+MetalSample2 -> 
+	Song: Beast but not least!
+	URL: https://freemusicarchive.org/music/XTaKeRuX/Empty_Grave/Beast_but_not_least
+	Artist: XTaKeRuX
+	Changes: cut intro
+MetalSample4 -> 
+	Song: Self-Deceived
+	URL: https://freemusicarchive.org/music/XTaKeRuX/Demonized/Self-Decieved
+	Artist: XTaKeRuX
+	Changes: none
+WeirdSample -> 
+	Song: Monkeys Spinning Monkeys
+	Artist: Kevin MacLeod
+	URL: https://freemusicarchive.org/music/Kevin_MacLeod/Best_of_2014_1461/Monkeys_Spinning_Monkeys
+	Changes: none
+-----------SFX---------------
+Brakes -> 
+	Sound: Tires Squealing Sound
+	URL: http://soundbible.com/1178-Tires-Squealing.html
+	Artist: Mike Koenig
+	Changes: slowed down and tuned down
+CarDoorAlarm -> 
+	Sound: Car Door Open And Alarm Sound
+	URL: http://soundbible.com/784-Car-Door-Open-And-Alarm.html
+	Artist: Mike Koenig
+	Changes: none
+Decompressing -> 
+	Sound: Chamber Decompressing Sound
+	URL: http://soundbible.com/1288-Chamber-Decompressing.html
+	Artist: Mike Koenig
+	Changes: none
+EngineSpurt -> 
+	Sound: Muscle Car Sound
+	URL: http://soundbible.com/2209-Muscle-Car.html
+	Artist: Daniel Simion
+	Changes: Cut (only kept intro)
+EngineIdle -> 
+	Sound: Muscle Car Sound
+	URL: http://soundbible.com/2209-Muscle-Car.html
+	Artist: Daniel Simion
+	Changes: Cut and Modified (lower pitch)
+Explosion3 -> 
+	Sound: RPG Plus Shrapnel Sound
+	URL: http://soundbible.com/2075-RPG-Plus-Shrapnel.html
+	Artist: Mike Koenig
+	Changes: cut intro
+Gun1 -> 
+	Sound: Atchisson Assault Shotgun Sound
+	URL: http://soundbible.com/2021-Atchisson-Assault-Shotgun.html
+	Artist: Soundeffects
+	Changes: cut to one shot
+Gun2 -> 
+	Sound: M4A1 Single Sound
+	URL: http://soundbible.com/1804-M4A1-Single.html
+	Artist: Kibblesbob
+	Changes: none
+Gun3 -> 
+	Sound: M1 Garand Gun Sound
+	URL: http://soundbible.com/1638-M1-Garand-Gun.html
+	Artist: battlestar10
+	Changes: none
+Gun4 -> 
+	Sound: Skorpion Sound
+	URL: http://soundbible.com/1785-Skorpion.html
+	Artist: Kibblesbob
+	Changes: none
+GunCocking1 -> 
+	Sound: Shotgun Reload Pump Sound
+	URL: http://soundbible.com/1959-Shotgun-Reload-Pump.html
+	Artist: RA The Sun God
+	Changes: none
+GunCocking2 -> 
+	Sound: Gun Cocking Slow Sound
+	URL: http://soundbible.com/1989-Gun-Cocking-Slow.html
+	Artist: Mike Koenig
+	Changes: none
+GunCocking3 -> 
+	Sound: Shotgun Reload Spas 12 Sound
+	URL: http://soundbible.com/1961-Shotgun-Reload-Spas-12.html
+	Artist: RA The Sun God
+	Changes: none
+GunCocking4 -> 
+	Sound: Gun Cocking Fast Sound
+	URL: http://soundbible.com/1988-Gun-Cocking-Fast.html
+	Artist: Mike Koenig
+	Changes: none
+MenuSelect1 -> 
+	Sound: New Poison
+	URL: https://freemusicarchive.org/music/Dyslexic_Fudgicle/Impossible_Doors/Dyslexic_Fudgicle_-_Impossible_Doors_-_30_New_Poison
+	Artist: Dyslexic Fudgicle
+	Changes: cut (only kept intro)
+MenuSelect2 -> 
+	Sound: Es stirbt in mir
+	URL: https://freemusicarchive.org/music/Die_Leere_im_Kern_Deiner_Hoffnung/Freiheit_Aushalten/Wuerfel18-dLiKdH-08-Es_stirbt_in_mir
+	Artist: Die Leere im Kern Deiner Hoffnung
+	Changes: cut (only kept intro)
+MenuSelect3 -> 
+	Sound: Shell Falling Sound
+	URL: http://soundbible.com/2072-Shell-Falling.html
+	Artist: Marcel
+	Changes: none
+MinigunFire -> 
+	Sound: Minigun Sound
+	URL: http://soundbible.com/1920-Minigun.html
+	Artist: Jim Rogers
+	Changes: spliced
+MinigunPrefire -> 
+	Sound: Minigun Sound
+	URL: http://soundbible.com/1920-Minigun.html
+	Artist: Jim Rogers
+	Changes: spliced
+RocketLauncher -> 
+	Sound: Missle Launch Sound
+	URL: http://soundbible.com/1794-Missle-Launch.html
+	Artist: Kibblesbob
+	Changes: none
+TornadoSiren -> 
+	Sound: Tornado Siren Sound
+	URL: http://soundbible.com/1061-Tornado-Siren.html
+	Artist: Mike Koenig
+	Changes: none
+Wind1 -> 
+	Sound: Wind
+	URL: http://soundbible.com/1810-Wind.html
+	Artist: Mark DiAngelo
+	Changes: none
+Wind2 -> 
+	Sound: Wind
+	URL: http://soundbible.com/1810-Wind.html
+	Artist: Mark DiAngelo
+	Changes: faster
+	
+CREDITED FROM https://www.zapsplat.com“
+	Clutch
+	Drift1
+	Drift2
+	Explosion1
+	Explosion2
+	MetalCrash1
+	MetalCrash2
+	
+	
+NO CREDITING REQUIRED -- CC0 1.0 Universal (CC0 1.0)
+Public Domain Dedication:
+	AirRelease1
+	AirRelease2
+	BulletHit1
+	BulletHit2
+	Engine1
+	Engine2
+	Engine3
+	Engine4
+	MenuSwitch1
+	MenuSwitch2
+	MetalSample3 -> https://freemusicarchive.org/music/Loyalty_Freak_Music/HYPER_METAL_/Loyalty_Freak_Music_-_HYPER_METAL__-_06_SUPER_METAL
